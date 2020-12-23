@@ -13,10 +13,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "15.x"
-      - run: npm install
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-tutoring-spa-${{ hashFiles('**/package-lock.json') }}
+      - run: npm ci
+        if: steps.cache.outputs.cache-hit != 'true'
       - run: npm run build
 
-      - name: update file and push to remote
+      - name: Set git user name
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

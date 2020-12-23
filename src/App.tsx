@@ -21,7 +21,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.generatedRegexMatcher = generatedRegexMatcher;
 `;
 
-export default () => {
+const App = () => {
   const [regex, setRegex] = useState(
     "^([a-z0-9._%-]+@[a-z0-9.-]+\\.[a-z]{2,6})*$"
   );
@@ -100,3 +100,5 @@ export default () => {
     </>
   );
 };
+
+export default App;
