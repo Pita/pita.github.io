@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs } from "react-syntax-highlighter/dist/esm/styles/hljs";
-// import { useWebWorker } from "./useWebWorker";
+import { useWebWorker } from "./useWebWorker";
 
 import "./index.scss";
 
@@ -27,13 +27,13 @@ export default () => {
   );
   const [flags, setFlags] = useState("i");
   const [code, setCode] = useState(codeString);
-  // const { generate } = useWebWorker();
+  const { generate } = useWebWorker();
   const onSubmitClick = () => {
     // // TODO: nice state management
-    // const regexStr = `/${regex}/${flags}`;
-    // generate({ regexStr, type: "js" }).then((code) => {
-    //   setCode(code);
-    // }); // TODO: error handling
+    const regexStr = `/${regex}/${flags}`;
+    generate({ regexStr, type: "js" }).then((code) => {
+      setCode(code);
+    }); // TODO: error handling
   };
 
   return (

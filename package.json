@@ -10,6 +10,7 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "react-syntax-highlighter": "^15.4.3",
+    "reco.io": "^0.2.4",
     "typescript": "^4.1.3"
   },
   "scripts": {
@@ -46,6 +47,7 @@
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "@types/react-syntax-highlighter": "^13.5.0",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "worker-loader": "^3.0.7"
   }
 }
